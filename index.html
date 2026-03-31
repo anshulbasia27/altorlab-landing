@@ -93,15 +93,15 @@
         .faq-toggle {
             display: none;
         }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
         .faq-toggle:checked ~ .faq-answer {
             max-height: 500px;
             padding-bottom: 1.5rem;
         }
         .faq-toggle:checked ~ .faq-question .faq-icon {
             transform: rotate(180deg);
-        }
-        .faq-icon {
-            transition: transform 0.3s ease;
         }
 
         /* Simple side-by-side for gallery */
@@ -209,6 +209,7 @@
                     </a>
                 </div>
             </div>
+        </div>
     </nav>
 
 
