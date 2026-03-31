@@ -1,9 +1,9 @@
 # AltorLab — Free AI Tools
 
-> AltorLab offers affordable AI-powered tools for everyday creative tasks. AI Room Redesign transforms your room photos into beautiful redesigns for just ₹749. Based in India.
+> AltorLab offers affordable AI-powered tools for everyday creative tasks. AI Room Redesign transforms your room photos into beautiful redesigns for just $9. Based in the United States.
 
 ## Tools
-- [AI Room Redesign](https://app.altorlab.org/room-redesign): Upload photo, choose style, get redesign (₹749)
+- [AI Room Redesign](https://app.altorlab.org/room-redesign): Upload photo, choose style, get redesign ($9)
 - [AI Background Remover](https://app.altorlab.org/tools/background-remover): Remove backgrounds instantly (coming soon, free)
 - [AI Tattoo Designer](https://app.altorlab.org/tools/tattoo-designer): Generate tattoo designs from descriptions (coming soon, free)
 
@@ -14,9 +14,9 @@
 
 ## Blog
 - [Best AI Interior Design Tools 2026](https://app.altorlab.org/blog/best-ai-interior-design-tools)
-- [Redesign Your Room for ₹749](https://app.altorlab.org/blog/redesign-room-749-rupees)
+- [Redesign Your Room for $9](https://app.altorlab.org/blog/redesign-room-749-dollars)
 
 ## Pricing
-- AI Room Redesign: ₹749 per design (~$9 USD)
+- AI Room Redesign: $9 per design (~$9 USD)
 - Background Remover: Free
 - Tattoo Designer: Free
