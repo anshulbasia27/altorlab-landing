@@ -1,22 +1,21 @@
-# AltorLab — Free AI Tools
+# AltorLab Room Redesign
 
-> AltorLab offers affordable AI-powered tools for everyday creative tasks. AI Room Redesign transforms your room photos into beautiful redesigns for just $9. Based in the United States.
+> AI-powered room redesign tool. Upload a photo of your room and get a photorealistic redesign in any style — Scandinavian, modern, minimalist, bohemian, and more. From $9 per design.
 
-## Tools
-- [AI Room Redesign](https://app.altorlab.org/room-redesign): Upload photo, choose style, get redesign ($9)
-- [AI Background Remover](https://app.altorlab.org/tools/background-remover): Remove backgrounds instantly (coming soon, free)
-- [AI Tattoo Designer](https://app.altorlab.org/tools/tattoo-designer): Generate tattoo designs from descriptions (coming soon, free)
+## Room Redesign Tool
+- https://app.altorlab.org/: AI room redesign tool — upload photo, choose style, get redesign in seconds
 
 ## Design Styles
-- [Modern Room Design](https://app.altorlab.org/styles/modern)
-- [Scandinavian Room Design](https://app.altorlab.org/styles/scandinavian)
-- [Minimalist Room Design](https://app.altorlab.org/styles/minimalist)
+- https://app.altorlab.org/styles/modern: Modern room design ideas
+- https://app.altorlab.org/styles/scandinavian: Scandinavian interior design
+- https://app.altorlab.org/styles/minimalist: Minimalist room design
+- https://app.altorlab.org/styles/bohemian: Bohemian room decor ideas
+- https://app.altorlab.org/styles/industrial: Industrial style room makeover
+
+## Use Cases
+- https://app.altorlab.org/use-cases/real-estate-staging: AI room staging for real estate listings — $9 vs $800 traditional staging
 
 ## Blog
-- [Best AI Interior Design Tools 2026](https://app.altorlab.org/blog/best-ai-interior-design-tools)
-- [Redesign Your Room for $9](https://app.altorlab.org/blog/redesign-room-749-dollars)
-
-## Pricing
-- AI Room Redesign: $9 per design (~$9 USD)
-- Background Remover: Free
-- Tattoo Designer: Free
+- /blog/ai-room-design-usa: AI room design for US homes
+- /blog/best-room-redesign-apps: Best AI room redesign apps compared
+- /blog/ai-vs-interior-designer: AI room redesign vs hiring an interior designer
