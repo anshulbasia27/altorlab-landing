@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-IN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Call Screening for Doctors India — Never Miss a Patient Call | Katch</title>
+    <meta name="description" content="Katch answers missed calls at your clinic, asks patients their name and reason for visiting, and sends you an instant summary. No receptionist needed. Free beta.">
+    <link rel="canonical" href="https://altorlab.org/for/doctors.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{stone:{50:'#FAFAF9',100:'#F5F5F4',200:'#E7E5E4',400:'#A8A29E',500:'#78716C',600:'#57534E',900:'#1C1917'},indigo:{50:'#EEF2FF',100:'#E0E7FF',600:'#4F46E5',700:'#4338CA'},emerald:{500:'#10B981'},amber:{50:'#FFFBEB',100:'#FEF3C7',500:'#F59E0B',800:'#92400E'},rose:{500:'#F43F5E'}}}}}</script>
+    <style>
+        body{background-color:#FAFAF9;color:#1C1917;-webkit-font-smoothing:antialiased;}
+        .faq-toggle{display:none;}.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease-out,padding 0.3s ease;color:#78716C;padding:0;line-height:1.7;}.faq-icon{transition:transform 0.3s ease;}.faq-toggle:checked~.faq-answer{max-height:400px;padding-bottom:1.5rem;}.faq-toggle:checked~label .faq-icon{transform:rotate(180deg);}
+        .btn-primary{transition:all 0.2s;}.btn-primary:hover{background-color:#4338CA;transform:translateY(-1px);box-shadow:0 8px 24px rgba(79,70,229,0.25);}
+        .form-input:focus{outline:none;border-color:#4F46E5;box-shadow:0 0 0 3px rgba(79,70,229,0.1);}
+        #success-state{display:none;}
+        .check{color:#10B981;font-weight:700;}.cross{color:#A8A29E;}
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will patients trust an AI assistant?","acceptedAnswer":{"@type":"Answer","text":"Yes — Katch introduces itself as an AI assistant for your clinic, not a robot. Patients experience a natural, professional conversation. Katch asks their name, reason for visit, and urgency — the same questions a receptionist would ask."}},{"@type":"Question","name":"Can Katch collect patient name and reason for visit?","acceptedAnswer":{"@type":"Answer","text":"Yes. Katch is configured with your clinic details and asks every caller their name, reason for the appointment (new consultation or follow-up), urgency, and preferred callback number. You receive all this in the instant summary."}},{"@type":"Question","name":"Does it work while I'm in a consultation?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's exactly when Katch is most useful. Set up call forwarding so calls route to Katch when your phone is busy. During consultations, Katch handles all incoming calls and sends you summaries to review between patients."}},{"@type":"Question","name":"How do I set up call forwarding on Jio for Katch?","acceptedAnswer":{"@type":"Answer","text":"Dial **67*[Katch number]# to forward when busy and **61*[Katch number]# when there's no answer. Your Katch number is in the app after signup. Setup takes under 60 seconds."}},{"@type":"Question","name":"What does Katch say if there's a medical emergency?","acceptedAnswer":{"@type":"Answer","text":"Katch can be configured to say: 'For medical emergencies, please call 112 or visit your nearest hospital immediately.' It also flags any caller who mentions emergency, urgent, or critical as high urgency in your summary."}},{"@type":"Question","name":"Can I customize the greeting for my specialty?","acceptedAnswer":{"@type":"Answer","text":"Yes — in the Katch app, you configure your name (e.g. Dr. Sharma), your specialty, and any custom instructions. Katch uses this to represent your clinic appropriately to each caller."}},{"@type":"Question","name":"Is patient data secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. Call summaries and transcripts are stored securely and only accessible to you. Katch does not share caller information with third parties. You can delete your data at any time."}}]}
+    </script>
+</head>
+<body class="bg-stone-50 text-stone-900 font-sans">
+
+    <nav class="sticky top-0 z-50 bg-stone-50/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="text-xl font-bold tracking-tight text-stone-900">Katch</a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/#how-it-works" class="text-stone-500 hover:text-stone-900 font-medium text-sm">How it Works</a>
+                    <div class="relative group"><button class="text-stone-500 hover:text-stone-900 font-medium text-sm flex items-center gap-1">Compare <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="absolute top-8 left-0 bg-white border border-stone-200 rounded-xl shadow-lg p-2 hidden group-hover:block min-w-52 z-50"><a href="/compare/truecaller-alternative.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Katch vs Truecaller</a><a href="/compare/best-ai-voicemail-app-india.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Best AI Voicemail India</a></div></div>
+                    <div class="relative group"><button class="text-indigo-600 font-semibold text-sm flex items-center gap-1">For Professionals <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="absolute top-8 left-0 bg-white border border-stone-200 rounded-xl shadow-lg p-2 hidden group-hover:block min-w-44 z-50"><a href="/for/doctors.html" class="block px-3 py-2 text-sm text-indigo-600 font-semibold hover:bg-indigo-50 rounded-lg">Doctors</a><a href="/for/founders.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Founders</a><a href="/for/lawyers.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Lawyers</a><a href="/for/real-estate-agents.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Real Estate Agents</a></div></div>
+                    <a href="/tools/missed-call-roi-calculator.html" class="text-stone-500 hover:text-stone-900 font-medium text-sm">Tools</a>
+                    <a href="/blog/" class="text-stone-500 hover:text-stone-900 font-medium text-sm">Blog</a>
+                </div>
+                <a href="#waitlist" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition-colors">Get Early Access &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-16 pb-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-semibold mb-6">Built for Doctors &amp; Clinics</div>
+            <h1 class="text-4xl sm:text-5xl font-black text-stone-900 tracking-tight leading-tight mb-6">Your AI Medical Receptionist.<br class="hidden sm:block"> Answers Every Call When You Can't.</h1>
+            <p class="text-lg text-stone-500 max-w-2xl mx-auto mb-8">A missed call from a new patient is a missed ₹5,000 consultation. Katch answers every call you miss, asks callers their name and reason for visiting, and sends you an instant summary.</p>
+            <a href="#waitlist" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-full text-white bg-indigo-600 btn-primary shadow-lg">Get Early Access — Free &rarr;</a>
+            <p class="text-sm text-stone-400 mt-3">100% free during beta &bull; Android &amp; iOS</p>
+        </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 mb-12">
+        <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-6">
+            <p class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2">Quick Answer</p>
+            <p class="text-stone-700 leading-relaxed">Katch is an AI call screening app for doctors. When you're with a patient and can't answer, Katch answers your missed calls, asks callers their name, reason for visit, and urgency, then sends you an instant text summary. No receptionist needed. Works on Jio, Airtel, Vodafone. Free during beta.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-black text-stone-900 text-center mb-12">The Missed Patient Call Problem</h2>
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div class="bg-rose-50 border border-rose-200 rounded-2xl p-8 text-center">
+                    <p class="text-5xl font-black text-stone-900 tracking-tight mb-2">₹1.98L</p>
+                    <p class="text-stone-500 font-medium mb-4">missed per year from 5 missed calls/day</p>
+                    <p class="text-xs text-stone-400">5 missed calls × ₹5,000 avg consultation × 30% new patients × 252 working days</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-3 items-start bg-white border border-stone-200 rounded-xl p-4">
+                        <span class="text-xl flex-shrink-0">🔔</span>
+                        <p class="text-stone-700 text-sm leading-relaxed"><strong>Patients call during consultations</strong> — your phone is busy, they reach voicemail, they say "hello… hello…" and hang up.</p>
+                    </div>
+                    <div class="flex gap-3 items-start bg-white border border-stone-200 rounded-xl p-4">
+                        <span class="text-xl flex-shrink-0">📵</span>
+                        <p class="text-stone-700 text-sm leading-relaxed"><strong>Indian callers don't leave voicemails</strong> — they call again, or they book with the next doctor they find.</p>
+                    </div>
+                    <div class="flex gap-3 items-start bg-white border border-stone-200 rounded-xl p-4">
+                        <span class="text-xl flex-shrink-0">👥</span>
+                        <p class="text-stone-700 text-sm leading-relaxed"><strong>You lose the patient permanently</strong> — by the time you call back, they've already booked elsewhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-stone-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-black text-stone-900 text-center mb-3">What Katch Says to Your Patients</h2>
+            <p class="text-stone-500 text-center mb-10">While you're in a consultation, Katch handles every call professionally.</p>
+            <div class="max-w-sm mx-auto bg-white border border-stone-200 rounded-3xl p-6 shadow-2xl">
+                <div class="flex items-center gap-3 mb-5 pb-4 border-b border-stone-100">
+                    <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-xl">🤖</div>
+                    <div><p class="font-bold text-stone-900 text-sm">Katch AI</p><p class="text-emerald-500 text-xs font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>Active call</p></div>
+                    <span class="ml-auto bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full">LIVE</span>
+                </div>
+                <div class="flex flex-col gap-3 text-sm">
+                    <div class="flex justify-start"><div class="bg-stone-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%] text-stone-800 leading-relaxed">Dr. Sharma's clinic — how can I help you today?</div></div>
+                    <div class="flex justify-end"><div class="bg-indigo-600 text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[85%] leading-relaxed">I need to book an appointment for my mother.</div></div>
+                    <div class="flex justify-start"><div class="bg-stone-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%] text-stone-800 leading-relaxed">Of course — is this for a new consultation or a follow-up visit?</div></div>
+                    <div class="flex justify-end"><div class="bg-indigo-600 text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[85%] leading-relaxed">New consultation. She's been having chest pain.</div></div>
+                    <div class="flex justify-start"><div class="bg-stone-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%] text-stone-800 leading-relaxed">I'll flag this as urgent for Dr. Sharma. Can I take a callback number?</div></div>
+                </div>
+                <div class="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl p-3.5">
+                    <p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">Summary sent to you →</p>
+                    <p class="text-sm text-emerald-800 leading-relaxed">📞 Appointment request — new patient, <strong class="text-rose-500">urgent</strong> (chest pain). Callback: +91 98xxx xxxxx</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-black text-stone-900 text-center mb-12">60-Second Setup for Your Clinic</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center"><div class="w-16 h-16 mx-auto bg-indigo-50 border border-indigo-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform:rotate(3deg)">📲</div><h3 class="font-bold text-stone-900 mb-1 text-sm">Download Katch</h3><p class="text-stone-500 text-xs leading-relaxed">Get the app, sign up with your clinic number</p></div>
+                <div class="text-center"><div class="w-16 h-16 mx-auto bg-amber-50 border border-amber-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform:rotate(-3deg)">⚙️</div><h3 class="font-bold text-stone-900 mb-1 text-sm">Set Your Profile</h3><p class="text-stone-500 text-xs leading-relaxed">Add your name, specialty, and what to ask patients</p></div>
+                <div class="text-center"><div class="w-16 h-16 mx-auto bg-emerald-50 border border-emerald-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform:rotate(3deg)">🔀</div><h3 class="font-bold text-stone-900 mb-1 text-sm">Forward Calls</h3><p class="text-stone-500 text-xs leading-relaxed">Dial **67*[Katch number]# on Jio/Airtel/Vodafone</p></div>
+                <div class="text-center"><div class="w-16 h-16 mx-auto bg-rose-50 border border-rose-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform:rotate(-3deg)">📋</div><h3 class="font-bold text-stone-900 mb-1 text-sm">Get Summaries</h3><p class="text-stone-500 text-xs leading-relaxed">Instant patient call summaries between consultations</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-stone-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-black text-stone-900 text-center mb-10">Katch vs Hiring a Receptionist</h2>
+            <div class="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden mb-6">
+                <div class="grid grid-cols-3 text-sm font-bold text-center border-b border-stone-200">
+                    <div class="py-4 px-4 text-stone-500">Feature</div>
+                    <div class="py-4 px-4 text-stone-500 border-x border-stone-200">Receptionist</div>
+                    <div class="py-4 px-4 text-indigo-600">Katch</div>
+                </div>
+                <div class="divide-y divide-stone-100 text-sm">
+                    <div class="grid grid-cols-3 text-center"><div class="py-3.5 px-4 text-left text-stone-600 font-medium">Available 24/7</div><div class="py-3.5 px-4 border-x border-stone-200 cross">✕</div><div class="py-3.5 px-4 check">✓</div></div>
+                    <div class="grid grid-cols-3 text-center bg-stone-50"><div class="py-3.5 px-4 text-left text-stone-600 font-medium">Handles simultaneous calls</div><div class="py-3.5 px-4 border-x border-stone-200 cross">✕</div><div class="py-3.5 px-4 check">✓</div></div>
+                    <div class="grid grid-cols-3 text-center"><div class="py-3.5 px-4 text-left text-stone-600 font-medium">Monthly cost</div><div class="py-3.5 px-4 border-x border-stone-200 text-stone-500 text-xs">₹15,000–25,000</div><div class="py-3.5 px-4 text-emerald-600 font-bold text-xs">₹0 (free beta)</div></div>
+                    <div class="grid grid-cols-3 text-center bg-stone-50"><div class="py-3.5 px-4 text-left text-stone-600 font-medium">Sends written summary</div><div class="py-3.5 px-4 border-x border-stone-200 cross">✕</div><div class="py-3.5 px-4 check">✓</div></div>
+                    <div class="grid grid-cols-3 text-center"><div class="py-3.5 px-4 text-left text-stone-600 font-medium">Works during consultations</div><div class="py-3.5 px-4 border-x border-stone-200 cross">✕</div><div class="py-3.5 px-4 check">✓</div></div>
+                    <div class="grid grid-cols-3 text-center bg-stone-50"><div class="py-3.5 px-4 text-left text-stone-600 font-medium">Never sick or on leave</div><div class="py-3.5 px-4 border-x border-stone-200 cross">✕</div><div class="py-3.5 px-4 check">✓</div></div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/tools/missed-call-roi-calculator.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-sm font-semibold hover:bg-amber-200 transition-colors">Calculate your missed revenue &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="waitlist" class="py-20 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">Early Access</div>
+                <h2 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight mb-4">Start recovering ₹1.98 lakh/year<br>in missed patient calls.</h2>
+                <p class="text-stone-500 text-lg">Free during beta. Android &amp; iOS.</p>
+            </div>
+            <div id="form-state" class="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm">
+                <div id="form-error" class="hidden mb-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm font-medium"></div>
+                <form id="waitlist-form" class="space-y-4">
+                    <div><label for="name" class="block text-sm font-semibold text-stone-700 mb-1.5">Your name</label><input type="text" id="name" name="name" placeholder="Dr. Sharma" required class="form-input w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm bg-stone-50 transition-all"></div>
+                    <div><label for="email" class="block text-sm font-semibold text-stone-700 mb-1.5">Email address</label><input type="email" id="email" name="email" placeholder="you@example.com" required class="form-input w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm bg-stone-50 transition-all"></div>
+                    <div><label for="phone" class="block text-sm font-semibold text-stone-700 mb-1.5">Phone number</label><input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required class="form-input w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm bg-stone-50 transition-all"><p class="text-xs text-stone-400 mt-1.5">We'll text you when Katch launches.</p></div>
+                    <button type="submit" id="submit-btn" class="btn-primary w-full py-4 rounded-xl text-white bg-indigo-600 font-bold text-base shadow-md mt-2"><span id="btn-text">Join the Waitlist — It's Free</span><span id="btn-loading" class="hidden">Joining...</span></button>
+                </form>
+                <p class="text-center text-xs text-stone-400 mt-4">No spam. Unsubscribe anytime. Your data is never sold.</p>
+            </div>
+            <div id="success-state" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-10 text-center shadow-sm">
+                <div class="text-5xl mb-4">🎉</div>
+                <h3 class="text-2xl font-black text-stone-900 mb-2">You're on the list!</h3>
+                <p class="text-stone-500 mb-6">We'll text you the moment Katch launches. Tell a colleague?</p>
+                <a id="whatsapp-share" href="" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 text-white font-semibold text-sm hover:bg-emerald-600 transition-colors">Share on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-stone-200">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-black text-stone-900 text-center mb-8">Frequently Asked Questions</h2>
+            <div class="bg-white rounded-2xl border border-stone-200 shadow-sm divide-y divide-stone-100 overflow-hidden">
+                <div class="px-6"><input type="checkbox" id="faq1" class="faq-toggle"><label for="faq1" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-sm">Will patients trust an AI assistant?<svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></label><div class="faq-answer text-sm">Yes — Katch introduces itself as an AI assistant for your clinic, not a robot. Patients experience a natural, professional conversation. Katch asks their name, reason for visit, and urgency — the same questions a receptionist would ask.</div></div>
+                <div class="px-6"><input type="checkbox" id="faq2" class="faq-toggle"><label for="faq2" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-sm">Can Katch collect patient name and reason for visit?<svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></label><div class="faq-answer text-sm">Yes. Katch is configured with your clinic details and asks every caller their name, reason for the appointment (new consultation or follow-up), urgency, and preferred callback number. You receive all this in the instant summary.</div></div>
+                <div class="px-6"><input type="checkbox" id="faq3" class="faq-toggle"><label for="faq3" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-sm">Does it work while I'm in a consultation?<svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></label><div class="faq-answer text-sm">Yes — that's exactly when Katch is most useful. Set up call forwarding so calls route to Katch when your phone is busy. During consultations, Katch handles all incoming calls and sends you summaries to review between patients.</div></div>
+                <div class="px-6"><input type="checkbox" id="faq4" class="faq-toggle"><label for="faq4" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-sm">How do I set up call forwarding on Jio?<svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></label><div class="faq-answer text-sm">Dial <strong>**67*[Katch number]#</strong> to forward when busy and <strong>**61*[Katch number]#</strong> when no answer. Your Katch number is in the app. See our <a href="/guides/call-forwarding-india.html" class="text-indigo-600 underline">complete call forwarding guide</a> for all carriers.</div></div>
+                <div class="px-6"><input type="checkbox" id="faq5" class="faq-toggle"><label for="faq5" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-sm">What does Katch say if there's a medical emergency?<svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></label><div class="faq-answer text-sm">Katch can be configured to say: "For medical emergencies, please call 112 or visit your nearest hospital immediately." It also flags any caller who mentions emergency, urgent, or critical as high urgency in your summary.</div></div>
+                <div class="px-6"><input type="checkbox" id="faq6" class="faq-toggle"><label for="faq6" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-sm">Is patient data secure?<svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></label><div class="faq-answer text-sm">Yes. Call summaries and transcripts are stored securely and only accessible to you. Katch does not share caller information with third parties. You can delete your data at any time.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-indigo-600">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">Stop missing patients. Start reading their calls.</h2>
+            <p class="text-indigo-200 text-lg mb-8">Free during beta. Android &amp; iOS. No receptionist needed.</p>
+            <a href="#waitlist" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-full text-indigo-600 bg-white hover:bg-indigo-50 shadow-lg transition-colors">Join the Waitlist — Free &rarr;</a>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div><span class="text-xl font-bold tracking-tight text-white">Katch</span><p class="text-sm text-stone-500 mt-1">AI voicemail &amp; call screening. Android &amp; iOS.</p></div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium"><a href="https://app.altorlab.org/privacy" class="hover:text-white transition-colors">Privacy</a><a href="https://app.altorlab.org/terms" class="hover:text-white transition-colors">Terms</a><a href="mailto:hello@altorlab.org" class="hover:text-white transition-colors">Contact</a></div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-stone-800 text-center text-sm"><p>&copy; 2026 Katch by AltorLab. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const form=document.getElementById('waitlist-form'),formState=document.getElementById('form-state'),successState=document.getElementById('success-state'),submitBtn=document.getElementById('submit-btn'),btnText=document.getElementById('btn-text'),btnLoading=document.getElementById('btn-loading'),formError=document.getElementById('form-error');
+        form.addEventListener('submit',async function(e){e.preventDefault();formError.classList.add('hidden');const name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),phone=document.getElementById('phone').value.trim();if(!name||name.length<2){formError.textContent='Please enter your name.';formError.classList.remove('hidden');return;}if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){formError.textContent='Please enter a valid email.';formError.classList.remove('hidden');return;}if(!phone||phone.replace(/\D/g,'').length<7){formError.textContent='Please enter a valid phone number.';formError.classList.remove('hidden');return;}submitBtn.disabled=true;btnText.classList.add('hidden');btnLoading.classList.remove('hidden');try{const res=await fetch('https://app.altorlab.org/api/voicemail-waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,phone})});const data=await res.json();if(!res.ok){formError.textContent=data.error||'Something went wrong.';formError.classList.remove('hidden');submitBtn.disabled=false;btnText.classList.remove('hidden');btnLoading.classList.add('hidden');return;}document.getElementById('whatsapp-share').href=`https://wa.me/?text=${encodeURIComponent('I just joined the waitlist for Katch — an AI that answers your calls and sends you instant summaries. 📞 https://altorlab.org')}`;formState.style.display='none';successState.style.display='block';}catch{formError.textContent='Network error. Please try again.';formError.classList.remove('hidden');submitBtn.disabled=false;btnText.classList.remove('hidden');btnLoading.classList.add('hidden');}});
+    </script>
+</body>
+</html>
