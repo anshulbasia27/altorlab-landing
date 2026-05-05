@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>AltorLab — Free AI Tools | AI Room Redesign, Background Remover & More</title>
-    <meta name="description" content="AltorLab offers free and affordable AI tools. Transform your room with AI Room Redesign from $9. Background removal, tattoo design, and more coming soon.">
+
+    <title>Katch — AI Voicemail & Call Screening | Never Miss What Matters</title>
+    <meta name="description" content="Katch answers your calls when you can't. AI screens callers, takes detailed messages, and sends you instant summaries. Available on Android and iOS. Join the waitlist.">
     <link rel="canonical" href="https://altorlab.org/">
-  <link rel="alternate" hreflang="en-us" href="https://altorlab.org/">
-    
+    <link rel="alternate" hreflang="en-us" href="https://altorlab.org/">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://altorlab.org/">
-    <meta property="og:title" content="AltorLab — Free AI Tools">
-    <meta property="og:description" content="AI Room Redesign from $9. Upload your room photo, choose a style, download your redesign.">
-    <meta property="og:image" content="https://altorlab.org/og-image.jpg">
-    
+    <meta property="og:title" content="Katch — AI Voicemail & Call Screening">
+    <meta property="og:description" content="Your AI answers when you can't. Screens callers, takes perfect messages, sends you instant summaries. Launching on Android & iOS.">
+    <meta property="og:image" content="https://altorlab.org/og-katch.jpg">
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://altorlab.org/">
-    <meta name="twitter:title" content="AltorLab — Free AI Tools">
-    <meta name="twitter:description" content="AI Room Redesign from $9. Upload your room photo, choose a style, download your redesign.">
-    <meta name="twitter:image" content="https://altorlab.org/og-image.jpg">
+    <meta name="twitter:title" content="Katch — AI Voicemail & Call Screening">
+    <meta name="twitter:description" content="Your AI answers when you can't. Screens callers, takes perfect messages, sends you instant summaries.">
+    <meta name="twitter:image" content="https://altorlab.org/og-katch.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -36,18 +36,30 @@
                     colors: {
                         stone: {
                             50: '#FAFAF9',
+                            100: '#F5F5F4',
+                            200: '#E7E5E4',
+                            400: '#A8A29E',
                             500: '#78716C',
+                            600: '#57534E',
                             900: '#1C1917',
                         },
                         indigo: {
+                            50: '#EEF2FF',
+                            100: '#E0E7FF',
                             600: '#4F46E5',
                             700: '#4338CA',
                         },
-                        amber: {
-                            500: '#F59E0B',
-                        },
                         emerald: {
                             500: '#10B981',
+                        },
+                        amber: {
+                            50: '#FFFBEB',
+                            100: '#FEF3C7',
+                            500: '#F59E0B',
+                            800: '#92400E',
+                        },
+                        rose: {
+                            500: '#F43F5E',
                         }
                     }
                 }
@@ -64,576 +76,636 @@
         }
 
         /* Pure CSS Accordion */
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            padding: 1.5rem 0;
-            font-weight: 600;
-            font-size: 1.125rem;
-            color: #1C1917;
-            background: none;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .faq-toggle { display: none; }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out, padding 0.3s ease;
             color: #78716C;
             padding: 0;
+            line-height: 1.7;
         }
-        .faq-toggle {
-            display: none;
-        }
-        .faq-icon {
-            transition: transform 0.3s ease;
-        }
+        .faq-icon { transition: transform 0.3s ease; }
         .faq-toggle:checked ~ .faq-answer {
-            max-height: 500px;
+            max-height: 400px;
             padding-bottom: 1.5rem;
         }
-        .faq-toggle:checked ~ .faq-question .faq-icon {
+        .faq-toggle:checked ~ label .faq-icon {
             transform: rotate(180deg);
         }
 
-        /* Simple side-by-side for gallery */
-        .gallery-pair {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .gallery-img-container {
-            position: relative;
-            flex: 1;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-        }
-        .gallery-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        /* Conversation card rotate effect */
+        .conv-card {
+            transform: rotate(1deg);
             transition: transform 0.5s ease;
         }
-        .gallery-pair:hover .gallery-img-container img {
-            transform: scale(1.05);
+        .conv-card:hover { transform: rotate(0deg); }
+
+        /* Feature card hover */
+        .feature-card {
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .img-label {
-            position: absolute;
-            bottom: 0.5rem;
-            left: 0.5rem;
-            background: rgba(255, 255, 255, 0.9);
-            color: #1C1917;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        .feature-card:hover {
+            border-color: #4F46E5;
+            box-shadow: 0 4px 20px rgba(79,70,229,0.08);
         }
+
+        /* CTA button hover */
+        .btn-primary {
+            transition: all 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #4338CA;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(79,70,229,0.25);
+        }
+
+        /* Stat dividers */
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+
+        /* Comparison table */
+        .check { color: #10B981; font-weight: 700; }
+        .cross { color: #A8A29E; }
+
+        /* Form input focus */
+        .form-input:focus {
+            outline: none;
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+        }
+
+        /* Success state */
+        #success-state { display: none; }
+        #form-state { display: block; }
     </style>
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "AltorLab",
+      "name": "Katch",
       "url": "https://altorlab.org",
-      "logo": "https://altorlab.org/og-image.jpg",
-      "description": "AI-powered tools for US consumers including AI Room Redesign, AI Background Remover, and AI Tattoo Designer.",
-      "sameAs": [
-        "https://app.altorlab.org"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "US"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "9",
-        "priceCurrency": "USD",
-        "url": "https://app.altorlab.org/room-redesign"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "AltorLab",
-      "url": "https://altorlab.org",
-      "description": "Free AI tools for everyone. AI Room Redesign, Background Remover, and more.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://altorlab.org/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "description": "AI voicemail and call screening app. Katch answers your calls, screens callers, and sends you instant summaries. Available on Android and iOS.",
+      "sameAs": ["https://app.altorlab.org"]
     }
     </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "AI Room Redesign",
-      "url": "https://app.altorlab.org/room-redesign",
-      "applicationCategory": "UtilitiesApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "9.00",
-        "priceCurrency": "USD"
-      }
+      "name": "Katch",
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "CommunicationApplication",
+      "description": "AI voicemail and call screening. Your AI answers when you can't, screens callers, and sends instant summaries.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
     </script>
-  <meta name="geo.region" content="US">
-  <meta name="geo.placename" content="United States">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How does AI room redesign work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Upload a photo of your room, choose a design style (modern, Scandinavian, minimalist, etc.), and the AI generates a photorealistic redesign in seconds. No interior design experience needed. Results are available to download immediately."
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Katch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Katch is an AI voicemail and call screening app. When you can't pick up, Katch answers, has a real conversation with the caller, and sends you an instant summary of who called and why." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do callers need to download anything?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Callers just call your normal number. Katch works transparently through call forwarding — no new SIM, no app for callers, no change to your number." }
+        },
+        {
+          "@type": "Question",
+          "name": "When is Katch launching?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Katch is launching soon on Android and iOS. Join the waitlist to get early access and be notified the moment it's live." }
         }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does AI room redesign cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AI room redesign on AltorLab starts at $9 USD. This gives you multiple redesign options in your chosen style. No subscription required — pay per redesign."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What design styles are available for AI room redesign?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Available styles include modern, Scandinavian, minimalist, bohemian, industrial, mid-century modern, farmhouse, coastal, art deco, and more. New styles are added regularly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use AI room redesign for real estate listings?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Many real estate agents use AI room redesign to stage empty rooms in listing photos. Upload the empty room photo, choose a furnished style, and get a staged version for under $9 — compared to $500-2000 for physical staging."
-        }
-      }
-    ]
-  }
-  </script>
+      ]
+    }
+    </script>
 </head>
 <body class="bg-stone-50 text-stone-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
 
-
+    <!-- NAV -->
     <nav class="sticky top-0 z-50 bg-stone-50/80 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-xl font-bold tracking-tight text-stone-900">AltorLab</a>
+                <a href="#" class="text-xl font-bold tracking-tight text-stone-900">Katch</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#how-it-works" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">How it Works</a>
+                    <a href="#features" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">Features</a>
+                    <a href="#faq" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">FAQ</a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#how-it-works" class="text-stone-600 hover:text-stone-900 font-medium transition-colors">How it Works</a>
-                    <a href="#gallery" class="text-stone-600 hover:text-stone-900 font-medium transition-colors">Gallery</a>
-                    <a href="#pricing" class="text-stone-600 hover:text-stone-900 font-medium transition-colors">Pricing</a>
-                    <a href="/blog/" class="text-stone-600 hover:text-stone-900 font-medium transition-colors">Blog</a>
-                    <a href="/styles/" class="text-stone-600 hover:text-stone-900 font-medium transition-colors">Styles</a>
-                </div>
-                <div>
-                    <a href="https://app.altorlab.org/room-redesign" class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition-colors">
-                        Try Now &rarr;
-                    </a>
-                </div>
+                <a href="#waitlist" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-full text-white bg-indigo-600 btn-primary shadow-sm">
+                    Get Early Access &rarr;
+                </a>
             </div>
         </div>
     </nav>
 
+    <!-- HERO -->
+    <section class="pt-16 pb-16 sm:pt-20 sm:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
 
-    <section class="pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pb-24 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-                <div class="lg:col-span-6 text-center lg:text-left mb-12 lg:mb-0">
-                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm font-semibold mb-6 border border-indigo-100">
-                        <span class="mr-2">🏠</span> AI-Powered Room Redesign
+                <!-- Left: copy -->
+                <div class="text-center lg:text-left mb-12 lg:mb-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-semibold mb-6">
+                        <span>📱</span> Launching on Android &amp; iOS
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight mb-6 leading-tight">
-                        See Your Room Redesigned in Seconds
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 tracking-tight leading-tight mb-6">
+                        Your AI answers<br class="hidden sm:block"> when you can't.
                     </h1>
-                    <p class="text-lg sm:text-xl text-stone-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-                        Upload a photo of any room. Choose from 5 design styles. Get a stunning AI redesign for just $9.
+                    <p class="text-lg sm:text-xl text-stone-500 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Katch screens your calls, has a real conversation with callers, and sends you an instant summary — so you never miss what matters.
                     </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
-                        <a href="https://app.altorlab.org/room-redesign" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                            Redesign Your Room &rarr;
-                        </a>
-                        <p class="text-sm text-stone-500 font-medium">
-                            No signup required &bull; Results in 30 seconds
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center lg:justify-start gap-2 text-stone-600 font-medium">
-                        <div class="flex -space-x-2">
-                            <div class="w-8 h-8 rounded-full bg-stone-200 border-2 border-white"></div>
-                            <div class="w-8 h-8 rounded-full bg-stone-300 border-2 border-white"></div>
-                            <div class="w-8 h-8 rounded-full bg-stone-400 border-2 border-white"></div>
+
+                    <!-- Value props -->
+                    <div class="flex flex-col sm:flex-row gap-3 mb-8 justify-center lg:justify-start">
+                        <div class="flex items-center gap-2 text-stone-600 text-sm font-medium">
+                            <span class="text-emerald-500 text-base">✓</span> No new SIM
                         </div>
-                        <span class="ml-2">✨ 500+ rooms redesigned so far</span>
+                        <div class="flex items-center gap-2 text-stone-600 text-sm font-medium">
+                            <span class="text-emerald-500 text-base">✓</span> No app for callers
+                        </div>
+                        <div class="flex items-center gap-2 text-stone-600 text-sm font-medium">
+                            <span class="text-emerald-500 text-base">✓</span> Works in 60 seconds
+                        </div>
                     </div>
+
+                    <!-- CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#waitlist" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-full text-white bg-indigo-600 btn-primary shadow-lg">
+                            Join the Waitlist — Free &rarr;
+                        </a>
+                    </div>
+                    <p class="text-sm text-stone-400 mt-3 font-medium">100% free during beta &bull; Android &amp; iOS</p>
                 </div>
-                
-                <div class="lg:col-span-6 relative">
-                    <div class="bg-white p-3 rounded-2xl shadow-xl border border-stone-100 transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
-                            <img src="images/rooms/living1-before.jpg" alt="Living Room Before" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-                            <div class="absolute inset-0 w-full h-full overflow-hidden" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
-                                <img src="images/rooms/living1-after.jpg" alt="Living Room After" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+
+                <!-- Right: live conversation card -->
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="conv-card bg-white border border-stone-200 rounded-3xl p-6 shadow-2xl w-full max-w-sm">
+
+                        <!-- Card header -->
+                        <div class="flex items-center gap-3 mb-5 pb-4 border-b border-stone-100">
+                            <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-xl">🤖</div>
+                            <div>
+                                <p class="font-bold text-stone-900 text-sm">Katch AI</p>
+                                <p class="text-emerald-500 text-xs font-semibold flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
+                                    Active call
+                                </p>
                             </div>
-                            <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-white shadow-[0_0_10px_rgba(0,0,0,0.3)] transform -translate-x-1/2">
-                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><title>Slider Handle</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                            <span class="ml-auto bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full">LIVE</span>
+                        </div>
+
+                        <!-- Messages -->
+                        <div class="flex flex-col gap-3 text-sm">
+                            <div class="flex justify-start">
+                                <div class="bg-stone-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%] leading-relaxed text-stone-800">
+                                    Hi! Anshul isn't available right now. I'm their AI — may I ask who's calling?
                                 </div>
                             </div>
-                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur text-stone-900 px-3 py-1 rounded-full text-sm font-bold shadow-sm">Before</div>
-                            <div class="absolute bottom-4 right-4 bg-indigo-600/90 backdrop-blur text-white px-3 py-1 rounded-full text-sm font-bold shadow-sm">After (Modern)</div>
+                            <div class="flex justify-end">
+                                <div class="bg-indigo-600 text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[85%] leading-relaxed">
+                                    Sure — this is Rahul from Sequoia Capital.
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-stone-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%] leading-relaxed text-stone-800">
+                                    Hi Rahul! What's the reason for your call today?
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-indigo-600 text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[85%] leading-relaxed">
+                                    We'd love to explore a potential investment. It's time-sensitive.
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-stone-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%] leading-relaxed text-stone-800">
+                                    Got it — I'll flag this as urgent for Anshul. Can I take a callback number?
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Summary pill -->
+                        <div class="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl p-3.5">
+                            <p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">Summary sent to you →</p>
+                            <p class="text-sm text-emerald-800 leading-relaxed">
+                                📞 <strong>Rahul (Sequoia)</strong> — Investment opportunity, <strong class="text-rose-500">urgent</strong>. Wants callback.
+                            </p>
                         </div>
                     </div>
-                    
-                    <div class="absolute -z-10 top-1/2 right-1/2 w-64 h-64 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
-                    <div class="absolute -z-10 top-1/2 left-1/2 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+
+                    <!-- Background blobs -->
+                    <div class="absolute -z-10 top-1/2 right-0 w-64 h-64 rounded-full bg-indigo-200 mix-blend-multiply filter blur-3xl opacity-40 pointer-events-none"></div>
+                    <div class="absolute -z-10 top-0 left-1/4 w-48 h-48 rounded-full bg-amber-100 mix-blend-multiply filter blur-3xl opacity-60 pointer-events-none"></div>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- TRUST STATS BAR -->
     <div class="bg-white border-y border-stone-200 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm font-semibold text-stone-500 uppercase tracking-wider mb-6">Trusted by homeowners, renters, and designers</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-stone-100">
-                <div>
-                    <div class="text-3xl font-bold text-stone-900 mb-1">500+</div>
-                    <div class="text-sm text-stone-600 font-medium">Rooms Redesigned</div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <p class="text-center text-xs font-bold text-stone-400 uppercase tracking-widest mb-6">For founders, professionals, and anyone who can't always pick up</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center stat-grid divide-x divide-stone-100">
+                <div class="px-4">
+                    <p class="text-3xl font-black text-stone-900 tracking-tight mb-1">0</p>
+                    <p class="text-sm text-stone-500 font-medium">Voicemails to listen to</p>
                 </div>
-                <div>
-                    <div class="text-3xl font-bold text-stone-900 mb-1">5</div>
-                    <div class="text-sm text-stone-600 font-medium">Design Styles</div>
+                <div class="px-4">
+                    <p class="text-3xl font-black text-stone-900 tracking-tight mb-1">60s</p>
+                    <p class="text-sm text-stone-500 font-medium">Setup time</p>
                 </div>
-                <div>
-                    <div class="text-3xl font-bold text-stone-900 mb-1">30s</div>
-                    <div class="text-sm text-stone-600 font-medium">Second Results</div>
+                <div class="px-4">
+                    <p class="text-3xl font-black text-stone-900 tracking-tight mb-1">24/7</p>
+                    <p class="text-sm text-stone-500 font-medium">AI always answers</p>
                 </div>
-                <div>
-                    <div class="text-3xl font-bold text-stone-900 mb-1">$9</div>
-                    <div class="text-sm text-stone-600 font-medium">per Design</div>
+                <div class="px-4">
+                    <p class="text-3xl font-black text-stone-900 tracking-tight mb-1">Free</p>
+                    <p class="text-sm text-stone-500 font-medium">During beta</p>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <section id="gallery" class="py-20 bg-stone-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Real Room Transformations</h2>
-                <p class="text-lg text-stone-600">These rooms were redesigned by our AI. Upload yours next.</p>
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-20 bg-stone-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider border border-indigo-100 mb-4">How it works</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight mb-4">Set up once. Works forever.</h2>
+                <p class="text-lg text-stone-500 max-w-xl mx-auto">No new SIM card. No app for callers. Just forward your calls.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-stone-100">
-                    <div class="gallery-pair mb-3">
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/living1-before.jpg" alt="Living Room Before" loading="lazy">
-                            <span class="img-label">Before</span>
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/living1-after.jpg" alt="Living Room After" loading="lazy">
-                            <span class="img-label">After</span>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-stone-900 text-center">Living Room <span class="text-stone-500 font-normal">(Modern)</span></h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-indigo-50 border border-indigo-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform: rotate(3deg)">📲</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Download Katch</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Get the app on Android or iOS. Sign up with your phone number in seconds.</p>
                 </div>
-
-
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-stone-100">
-                    <div class="gallery-pair mb-3">
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/living2-before.jpg" alt="Living Room Before" loading="lazy">
-                            <span class="img-label">Before</span>
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/living2-after.jpg" alt="Living Room After" loading="lazy">
-                            <span class="img-label">After</span>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-stone-900 text-center">Living Room <span class="text-stone-500 font-normal">(Scandinavian)</span></h3>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-amber-50 border border-amber-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform: rotate(-3deg)">🔀</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Forward Your Calls</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Use your carrier's call forward when busy/no answer. Takes 10 seconds.</p>
                 </div>
-
-
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-stone-100">
-                    <div class="gallery-pair mb-3">
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/bedroom-before.jpg" alt="Bedroom Before" loading="lazy">
-                            <span class="img-label">Before</span>
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/bedroom-after.jpg" alt="Bedroom After" loading="lazy">
-                            <span class="img-label">After</span>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-stone-900 text-center">Bedroom <span class="text-stone-500 font-normal">(Minimalist)</span></h3>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-emerald-50 border border-emerald-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform: rotate(3deg)">🤖</div>
+                    <h3 class="font-bold text-stone-900 mb-2">AI Answers for You</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Katch has a real conversation — asks who's calling, why, and what they need.</p>
                 </div>
-
-
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-stone-100">
-                    <div class="gallery-pair mb-3">
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/kitchen-before.jpg" alt="Kitchen Before" loading="lazy">
-                            <span class="img-label">Before</span>
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/kitchen-after.jpg" alt="Kitchen After" loading="lazy">
-                            <span class="img-label">After</span>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-stone-900 text-center">Kitchen <span class="text-stone-500 font-normal">(Industrial)</span></h3>
-                </div>
-
-
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-stone-100">
-                    <div class="gallery-pair mb-3">
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/bathroom-before.jpg" alt="Bathroom Before" loading="lazy">
-                            <span class="img-label">Before</span>
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/bathroom-after.jpg" alt="Bathroom After" loading="lazy">
-                            <span class="img-label">After</span>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-stone-900 text-center">Bathroom <span class="text-stone-500 font-normal">(Bohemian)</span></h3>
-                </div>
-
-
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-stone-100">
-                    <div class="gallery-pair mb-3">
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/office-before.jpg" alt="Home Office Before" loading="lazy">
-                            <span class="img-label">Before</span>
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="images/rooms/office-after.jpg" alt="Home Office After" loading="lazy">
-                            <span class="img-label">After</span>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-stone-900 text-center">Home Office <span class="text-stone-500 font-normal">(Modern)</span></h3>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-rose-50 border border-rose-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm" style="transform: rotate(-3deg)">📋</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Get the Summary</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Instant message with who called, why, and whether it's urgent. Decide to call back.</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <section id="how-it-works" class="py-20 bg-white border-y border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">How It Works</h2>
-                <p class="text-lg text-stone-600">Get your dream room in three simple steps.</p>
+    <!-- FEATURES -->
+    <section id="features" class="py-20 bg-white border-t border-stone-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider border border-indigo-100 mb-4">Features</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight mb-4">Everything you wish voicemail was.</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16">
-
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-indigo-100 transform rotate-3">
-                        <span class="text-3xl">📸</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-3">Upload Your Room</h3>
-                    <p class="text-stone-600 leading-relaxed">Take a picture of any room. JPG or PNG, any angle. We'll handle the rest.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="feature-card bg-stone-50 border border-stone-200 rounded-2xl p-6">
+                    <div class="text-3xl mb-4">🗣️</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Real AI Conversations</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Not a recording. Katch has a live, natural conversation — asks follow-up questions and handles anything the caller throws at it.</p>
                 </div>
-
-
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-amber-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-amber-100 transform -rotate-3">
-                        <span class="text-3xl">🎨</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-3">Pick a Style</h3>
-                    <p class="text-stone-600 leading-relaxed">Choose Modern, Scandinavian, Minimalist, Industrial, or Bohemian.</p>
+                <div class="feature-card bg-stone-50 border border-stone-200 rounded-2xl p-6">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Instant Summaries</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">The moment the call ends, you get a crisp summary — caller name, reason, urgency level, and callback number.</p>
                 </div>
-
-
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-emerald-100 transform rotate-3">
-                        <span class="text-3xl">✨</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-3">Get Your Redesign</h3>
-                    <p class="text-stone-600 leading-relaxed">AI transforms your room in under 30 seconds. Download instantly.</p>
+                <div class="feature-card bg-stone-50 border border-stone-200 rounded-2xl p-6">
+                    <div class="text-3xl mb-4">🎭</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Your Personality</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Configure Katch with your name, role, and how you'd like it to respond. Professional, casual, or anything in between.</p>
+                </div>
+                <div class="feature-card bg-stone-50 border border-stone-200 rounded-2xl p-6">
+                    <div class="text-3xl mb-4">🚫</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Spam Blocking</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Katch spots robocalls and spam patterns instantly. You only hear about real callers with real reasons.</p>
+                </div>
+                <div class="feature-card bg-stone-50 border border-stone-200 rounded-2xl p-6">
+                    <div class="text-3xl mb-4">📜</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Full Transcripts</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Every conversation is saved with a complete transcript so you can read the full exchange, not just the summary.</p>
+                </div>
+                <div class="feature-card bg-stone-50 border border-stone-200 rounded-2xl p-6">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h3 class="font-bold text-stone-900 mb-2">Android &amp; iOS</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed">Native apps for both platforms. Notifications, call history, and settings all in your pocket.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="text-center">
-                <a href="https://app.altorlab.org/room-redesign" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                    Try It Now &rarr;
+    <!-- VS COMPARISON -->
+    <section class="py-20 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight mb-4">Why not just use regular voicemail?</h2>
+                <p class="text-stone-500 text-lg">Regular voicemail was designed in 1980. Katch was designed for 2026.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden">
+                <div class="grid grid-cols-3 text-sm font-bold text-center border-b border-stone-200">
+                    <div class="py-4 px-4 text-stone-500">Feature</div>
+                    <div class="py-4 px-4 text-stone-500 border-x border-stone-200">Regular Voicemail</div>
+                    <div class="py-4 px-4 text-indigo-600">Katch</div>
+                </div>
+                <div class="divide-y divide-stone-100 text-sm">
+                    <div class="grid grid-cols-3 text-center">
+                        <div class="py-3.5 px-4 text-left text-stone-600 font-medium">Knows who called &amp; why</div>
+                        <div class="py-3.5 px-4 border-x border-stone-200 cross text-stone-400">✕</div>
+                        <div class="py-3.5 px-4 check">✓</div>
+                    </div>
+                    <div class="grid grid-cols-3 text-center bg-stone-50">
+                        <div class="py-3.5 px-4 text-left text-stone-600 font-medium">Asks follow-up questions</div>
+                        <div class="py-3.5 px-4 border-x border-stone-200 cross text-stone-400">✕</div>
+                        <div class="py-3.5 px-4 check">✓</div>
+                    </div>
+                    <div class="grid grid-cols-3 text-center">
+                        <div class="py-3.5 px-4 text-left text-stone-600 font-medium">Instant text summary</div>
+                        <div class="py-3.5 px-4 border-x border-stone-200 cross text-stone-400">✕</div>
+                        <div class="py-3.5 px-4 check">✓</div>
+                    </div>
+                    <div class="grid grid-cols-3 text-center bg-stone-50">
+                        <div class="py-3.5 px-4 text-left text-stone-600 font-medium">Flags urgent calls</div>
+                        <div class="py-3.5 px-4 border-x border-stone-200 cross text-stone-400">✕</div>
+                        <div class="py-3.5 px-4 check">✓</div>
+                    </div>
+                    <div class="grid grid-cols-3 text-center">
+                        <div class="py-3.5 px-4 text-left text-stone-600 font-medium">Blocks spam callers</div>
+                        <div class="py-3.5 px-4 border-x border-stone-200 cross text-stone-400">✕</div>
+                        <div class="py-3.5 px-4 check">✓</div>
+                    </div>
+                    <div class="grid grid-cols-3 text-center bg-stone-50">
+                        <div class="py-3.5 px-4 text-left text-stone-600 font-medium">No app needed for callers</div>
+                        <div class="py-3.5 px-4 border-x border-stone-200 check">✓</div>
+                        <div class="py-3.5 px-4 check">✓</div>
+                    </div>
+                    <div class="grid grid-cols-3 text-center">
+                        <div class="py-3.5 px-4 text-left text-stone-600 font-medium">Full searchable transcript</div>
+                        <div class="py-3.5 px-4 border-x border-stone-200 cross text-stone-400">✕</div>
+                        <div class="py-3.5 px-4 check">✓</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAITLIST FORM -->
+    <section id="waitlist" class="py-20 bg-white border-t border-stone-200">
+        <div class="max-w-xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">Early Access</div>
+                <h2 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight mb-4">Be first to try Katch.</h2>
+                <p class="text-stone-500 text-lg">Free during beta. Android &amp; iOS. We'll notify you the moment we launch.</p>
+            </div>
+
+            <!-- Form state -->
+            <div id="form-state" class="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm">
+                <div id="form-error" class="hidden mb-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm font-medium"></div>
+                <form id="waitlist-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-stone-700 mb-1.5">Your name</label>
+                        <input
+                            type="text" id="name" name="name" placeholder="Anshul Basia" required
+                            class="form-input w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm bg-stone-50 transition-all"
+                        >
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-stone-700 mb-1.5">Email address</label>
+                        <input
+                            type="email" id="email" name="email" placeholder="you@example.com" required
+                            class="form-input w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm bg-stone-50 transition-all"
+                        >
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-semibold text-stone-700 mb-1.5">Phone number</label>
+                        <input
+                            type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required
+                            class="form-input w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm bg-stone-50 transition-all"
+                        >
+                        <p class="text-xs text-stone-400 mt-1.5">We'll text you when Katch launches.</p>
+                    </div>
+                    <button
+                        type="submit" id="submit-btn"
+                        class="btn-primary w-full py-4 rounded-xl text-white bg-indigo-600 font-bold text-base shadow-md mt-2"
+                    >
+                        <span id="btn-text">Join the Waitlist — It's Free</span>
+                        <span id="btn-loading" class="hidden">Joining...</span>
+                    </button>
+                </form>
+                <p class="text-center text-xs text-stone-400 mt-4">No spam. Unsubscribe anytime. Your data is never sold.</p>
+            </div>
+
+            <!-- Success state -->
+            <div id="success-state" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-10 text-center shadow-sm">
+                <div class="text-5xl mb-4">🎉</div>
+                <h3 class="text-2xl font-black text-stone-900 mb-2">You're on the list!</h3>
+                <p class="text-stone-500 mb-6">We'll text you the moment Katch launches. Tell a friend?</p>
+                <a
+                    id="whatsapp-share"
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 text-white font-semibold text-sm hover:bg-emerald-600 transition-colors"
+                >
+                    Share on WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
-
-    <section id="pricing" class="py-24 bg-stone-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Simple Pricing</h2>
-                <p class="text-lg text-stone-600">No subscriptions. No hidden fees. Just pay for what you need.</p>
-            </div>
-
-            <div class="max-w-md mx-auto">
-                <div class="bg-white rounded-3xl shadow-xl border border-stone-200 overflow-hidden">
-                    <div class="p-8 sm:p-10">
-                        <div class="flex items-baseline gap-2 mb-6 justify-center">
-                            <span class="text-5xl font-extrabold text-stone-900">$9</span>
-                            <span class="text-lg text-stone-500 font-medium">/ per design</span>
-                        </div>
-                        
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start">
-                                <span class="text-emerald-500 mr-3 text-xl">✅</span>
-                                <span class="text-stone-700 font-medium">High-resolution AI redesign</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-emerald-500 mr-3 text-xl">✅</span>
-                                <span class="text-stone-700 font-medium">5 design styles to choose from</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-emerald-500 mr-3 text-xl">✅</span>
-                                <span class="text-stone-700 font-medium">Instant download (under 30 seconds)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-emerald-500 mr-3 text-xl">✅</span>
-                                <span class="text-stone-700 font-medium">No subscription, no hidden fees</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-emerald-500 mr-3 text-xl">✅</span>
-                                <span class="text-stone-700 font-medium">Full commercial rights to your redesign</span>
-                            </li>
-                        </ul>
-                        
-                        <a href="https://app.altorlab.org/room-redesign" class="block w-full py-4 px-6 text-center rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 font-bold text-lg shadow-md transition-colors">
-                            Redesign Your Room &rarr;
-                        </a>
-                    </div>
-                    <div class="bg-stone-50 px-8 py-4 border-t border-stone-100 text-center">
-                        <p class="text-sm text-stone-500 font-medium">Pro plan coming soon — unlimited designs for $12/month</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="py-20 bg-white border-t border-stone-200">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-stone-900 mb-4">Frequently Asked Questions</h2>
+                <h2 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight mb-4">Frequently Asked Questions</h2>
             </div>
 
-            <div class="space-y-0">
+            <div class="bg-white rounded-2xl border border-stone-200 shadow-sm divide-y divide-stone-100 overflow-hidden">
 
-                <div class="faq-item">
+                <div class="px-6">
                     <input type="checkbox" id="faq1" class="faq-toggle">
-                    <label for="faq1" class="faq-question">
-                        How does AI room redesign work?
-                        <svg class="w-5 h-5 text-stone-400 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><title>Toggle FAQ</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <label for="faq1" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-base">
+                        What is Katch?
+                        <svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </label>
-                    <div class="faq-answer">
-                        <p>Our advanced AI analyzes the geometry, lighting, and existing furniture in your photo. It then generates a completely new interior design based on your chosen style, while maintaining the structural integrity of your room (walls, windows, doors).</p>
+                    <div class="faq-answer text-sm">
+                        Katch is an AI voicemail and call screening app. When you're busy or can't pick up, Katch answers your call, has a real conversation with the caller — asking who they are and what they need — then sends you an instant text summary. It's launching on Android and iOS.
                     </div>
                 </div>
 
-
-                <div class="faq-item">
+                <div class="px-6">
                     <input type="checkbox" id="faq2" class="faq-toggle">
-                    <label for="faq2" class="faq-question">
-                        What rooms can I redesign?
-                        <svg class="w-5 h-5 text-stone-400 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><title>Toggle FAQ</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <label for="faq2" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-base">
+                        Do callers need to download an app?
+                        <svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </label>
-                    <div class="faq-answer">
-                        <p>You can redesign almost any interior space! Living rooms, bedrooms, kitchens, bathrooms, home offices, dining rooms, and even empty rooms. Just make sure the photo is well-lit and shows a good portion of the room.</p>
+                    <div class="faq-answer text-sm">
+                        No. Callers just call your normal number as always. Katch works through your carrier's call forwarding — when you're busy or unavailable, calls get routed to Katch automatically. No new SIM, no change to your number, nothing for callers to install.
                     </div>
                 </div>
 
-
-                <div class="faq-item">
+                <div class="px-6">
                     <input type="checkbox" id="faq3" class="faq-toggle">
-                    <label for="faq3" class="faq-question">
-                        How much does it cost?
-                        <svg class="w-5 h-5 text-stone-400 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><title>Toggle FAQ</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <label for="faq3" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-base">
+                        How does Katch know how to represent me?
+                        <svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </label>
-                    <div class="faq-answer">
-                        <p>It costs just $9 per high-resolution redesign. There are no subscriptions or hidden fees. You pay once and get your stunning AI-generated room design instantly.</p>
+                    <div class="faq-answer text-sm">
+                        You configure your AI profile in the Katch app — your name, role, a bit about what you do, and how formal or casual you'd like it to sound. Katch uses this context in every call so it sounds like your actual assistant, not a generic bot.
                     </div>
                 </div>
 
-
-                <div class="faq-item">
+                <div class="px-6">
                     <input type="checkbox" id="faq4" class="faq-toggle">
-                    <label for="faq4" class="faq-question">
-                        Is my data safe?
-                        <svg class="w-5 h-5 text-stone-400 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><title>Toggle FAQ</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <label for="faq4" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-base">
+                        How do I get notified about calls?
+                        <svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </label>
-                    <div class="faq-answer">
-                        <p>Yes, absolutely. We respect your privacy. Your photos are processed securely and are never shared with third parties or used to train public AI models without your explicit consent.</p>
+                    <div class="faq-answer text-sm">
+                        As soon as a call ends, Katch sends you a push notification with the summary. You can also get summaries over WhatsApp or SMS. Urgent calls are flagged separately so you know what to act on first.
                     </div>
                 </div>
 
-
-                <div class="faq-item">
+                <div class="px-6">
                     <input type="checkbox" id="faq5" class="faq-toggle">
-                    <label for="faq5" class="faq-question">
-                        Can I use the redesign commercially?
-                        <svg class="w-5 h-5 text-stone-400 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><title>Toggle FAQ</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <label for="faq5" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-base">
+                        Is it really free?
+                        <svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </label>
-                    <div class="faq-answer">
-                        <p>Yes! You receive full commercial rights to the generated images. You can use them for real estate listings, interior design portfolios, social media, or any other commercial purpose.</p>
+                    <div class="faq-answer text-sm">
+                        Yes — completely free during the beta. We're starting with a small group to make the experience great before scaling. Early waitlist members get free access first.
                     </div>
                 </div>
+
+                <div class="px-6">
+                    <input type="checkbox" id="faq6" class="faq-toggle">
+                    <label for="faq6" class="flex items-center justify-between py-5 cursor-pointer font-semibold text-stone-900 text-base">
+                        When is Katch launching?
+                        <svg class="faq-icon w-5 h-5 text-stone-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </label>
+                    <div class="faq-answer text-sm">
+                        Very soon on Android (Play Store) and iOS (App Store). Join the waitlist and you'll be among the first to know — we'll text you the moment it's live.
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- FOOTER CTA -->
+    <section class="py-16 bg-indigo-600">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">Stop missing calls. Start reading them.</h2>
+            <p class="text-indigo-200 text-lg mb-8">Join the waitlist. Free during beta. Android &amp; iOS.</p>
+            <a href="#waitlist" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-full text-indigo-600 bg-white hover:bg-indigo-50 shadow-lg transition-colors">
+                Join the Waitlist — Free &rarr;
+            </a>
+        </div>
+    </section>
 
-    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+    <!-- FOOTER -->
+    <footer class="bg-stone-900 text-stone-400 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold tracking-tight text-white">AltorLab</span>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white">Katch</span>
+                    <p class="text-sm text-stone-500 mt-1">AI voicemail &amp; call screening. Android &amp; iOS.</p>
                 </div>
-                
-                <div class="flex flex-wrap justify-center gap-8 text-sm font-medium">
-                    <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
-                    <a href="/styles/" class="hover:text-white transition-colors">Styles</a>
-                    <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="/terms" class="hover:text-white transition-colors">Terms</a>
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium">
+                    <a href="https://app.altorlab.org/voicemail/privacy" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="https://app.altorlab.org/voicemail/terms" class="hover:text-white transition-colors">Terms</a>
                     <a href="mailto:hello@altorlab.org" class="hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
-            
-            <div class="mt-8 pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-                <p>&copy; 2026 AltorLab. All rights reserved.</p>
-                <p class="flex items-center gap-1">
-                    Made with AI + good taste
-                </p>
+            <div class="mt-8 pt-8 border-t border-stone-800 text-center text-sm">
+                <p>&copy; 2026 Katch by AltorLab. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- WAITLIST FORM SCRIPT -->
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const formState = document.getElementById('form-state');
+        const successState = document.getElementById('success-state');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnLoading = document.getElementById('btn-loading');
+        const formError = document.getElementById('form-error');
+        const whatsappShare = document.getElementById('whatsapp-share');
+
+        function showError(msg) {
+            formError.textContent = msg;
+            formError.classList.remove('hidden');
+        }
+
+        function hideError() {
+            formError.classList.add('hidden');
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            hideError();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || name.length < 2) { showError('Please enter your name.'); return; }
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Please enter a valid email address.'); return; }
+            if (!phone || phone.replace(/\D/g, '').length < 7) { showError('Please enter a valid phone number.'); return; }
+
+            // Loading state
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+
+            try {
+                const res = await fetch('https://app.altorlab.org/api/voicemail-waitlist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, phone })
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    showError(data.error || 'Something went wrong. Please try again.');
+                    submitBtn.disabled = false;
+                    btnText.classList.remove('hidden');
+                    btnLoading.classList.add('hidden');
+                    return;
+                }
+
+                // Success
+                const shareMsg = encodeURIComponent(`I just joined the waitlist for Katch — an AI that answers your calls and sends you instant summaries. 📞 Check it out: https://altorlab.org`);
+                whatsappShare.href = `https://wa.me/?text=${shareMsg}`;
+
+                formState.style.display = 'none';
+                successState.style.display = 'block';
+
+            } catch (err) {
+                showError('Network error. Please check your connection and try again.');
+                submitBtn.disabled = false;
+                btnText.classList.remove('hidden');
+                btnLoading.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
