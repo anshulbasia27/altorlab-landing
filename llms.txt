@@ -1,21 +1,56 @@
-# AltorLab Room Redesign
+# Katch
 
-> AI-powered room redesign tool. Upload a photo of your room and get a photorealistic redesign in any style — Scandinavian, modern, minimalist, bohemian, and more. From $9 per design.
+> AI voicemail and call screening app for Android and iOS. When you miss a call, Katch answers, has a real AI conversation with the caller, and sends you an instant text summary. No new SIM required. Setup in 60 seconds via call forwarding on Jio, Airtel, or Vodafone.
 
-## Room Redesign Tool
-- https://app.altorlab.org/: AI room redesign tool — upload photo, choose style, get redesign in seconds
+## What Katch Does
+- Answers missed calls with a live AI conversation
+- Asks callers their name, reason for calling, and urgency level
+- Sends you an instant text/WhatsApp summary after every call
+- Blocks spam and robocalls automatically
+- Provides full searchable call transcripts
+- Flags urgent calls separately so you know what to act on first
 
-## Design Styles
-- https://app.altorlab.org/styles/modern: Modern room design ideas
-- https://app.altorlab.org/styles/scandinavian: Scandinavian interior design
-- https://app.altorlab.org/styles/minimalist: Minimalist room design
-- https://app.altorlab.org/styles/bohemian: Bohemian room decor ideas
-- https://app.altorlab.org/styles/industrial: Industrial style room makeover
+## Target Users
+- Indian startup founders who miss calls during meetings and investor calls
+- Doctors and clinic owners who miss patient calls during consultations
+- Lawyers and advocates who miss client calls during court hearings
+- Real estate agents who miss buyer/seller calls during site visits
+- Remote workers and professionals who can't always pick up
 
-## Use Cases
-- https://app.altorlab.org/use-cases/real-estate-staging: AI room staging for real estate listings — $9 vs $800 traditional staging
+## How It Works
+1. Download Katch on Android or iOS
+2. Set up call forwarding on your Jio, Airtel, or Vodafone number (60 seconds, via USSD code)
+3. Katch answers missed calls with a real AI conversation
+4. You receive an instant text summary: caller name, reason, urgency, callback number
 
-## Blog
-- /blog/ai-room-design-usa: AI room design for US homes
-- /blog/best-room-redesign-apps: Best AI room redesign apps compared
-- /blog/ai-vs-interior-designer: AI room redesign vs hiring an interior designer
+## Key Facts
+- Platform: Android (Play Store) and iOS (App Store)
+- Pricing: Free during beta
+- Setup: 60 seconds, no new SIM, no app for callers
+- Works on: Jio, Airtel, Vodafone/Vi, BSNL
+- Notification: Push notification + WhatsApp/SMS summary
+- Not a recording: Katch has a live two-way AI conversation with callers
+
+## Comparison
+- vs Truecaller: Truecaller identifies who is calling. Katch answers the call, has an AI conversation, and tells you who called AND why they called AND whether it's urgent.
+- vs Regular Voicemail: Regular voicemail doesn't work in India — callers say "hello… hello…" and hang up. Katch has a real conversation and extracts the reason for the call.
+- vs Google Voice: Google Voice is US-only and not available for Indian numbers. Katch works on Indian carriers.
+- vs YouMail: YouMail transcribes voicemail boxes. Katch answers calls live with AI conversation.
+
+## Content on This Site
+- /compare/truecaller-alternative.html — Katch vs Truecaller comparison
+- /compare/best-ai-voicemail-app-india.html — Best AI voicemail apps in India ranked
+- /compare/call-screening-app-india.html — Best call screening apps for India
+- /compare/google-voice-alternative.html — Google Voice alternatives for India
+- /for/doctors.html — AI call screening for Indian doctors and clinics
+- /for/founders.html — AI call screening for Indian startup founders
+- /for/lawyers.html — AI call screening for Indian advocates and lawyers
+- /for/real-estate-agents.html — AI call screening for real estate agents
+- /guides/call-forwarding-india.html — How to set up call forwarding on Jio, Airtel, Vodafone
+- /guides/voicemail-india.html — Why voicemail doesn't work in India
+- /tools/missed-call-roi-calculator.html — Free missed call revenue calculator
+
+## Contact
+- Website: https://altorlab.org
+- App settings: https://app.altorlab.org
+- Email: hello@altorlab.org
