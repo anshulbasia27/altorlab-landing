@@ -181,6 +181,41 @@
           "@type": "Question",
           "name": "When is Katch launching?",
           "acceptedAnswer": { "@type": "Answer", "text": "Katch is launching soon on Android and iOS. Join the waitlist to get early access and be notified the moment it's live." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Katch work in India?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Katch works in India through carrier call forwarding. You set up call forwarding on your Jio, Airtel, or Vodafone number using a USSD code (takes 60 seconds), and when you miss a call, it routes to Katch's AI. Katch answers, has a real conversation with the caller, and sends you an instant text summary." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I set up Katch on Jio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "To use Katch on Jio, dial **67*[Katch number]# to forward calls when you're busy, and **61*[Katch number]# to forward when there's no answer. Your Katch number is provided in the app after signup. Setup takes under 60 seconds." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Katch different from Truecaller?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Truecaller identifies who is calling you. Katch answers the call when you can't, has an AI conversation with the caller (asking their name, reason, and urgency), and sends you an instant text summary. Truecaller tells you the name; Katch tells you the name, reason, and urgency." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Katch require a new SIM card?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Katch works with your existing phone number on any Indian carrier — Jio, Airtel, Vodafone, or BSNL. No new SIM, no number change, no app for callers to install." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Katch know if a call is urgent?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Katch's AI detects urgency from caller language — words like 'emergency', 'urgent', 'immediately', 'critical' trigger an urgent flag in the summary. Urgent call summaries are highlighted separately so you know what to act on first." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Katch say to callers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Katch introduces itself as your AI assistant using your configured name and role (e.g. 'Hi, I'm an AI assistant for Dr. Sharma's clinic'). It then asks who is calling and why, answers basic questions you've pre-configured, and collects a callback number. Callers experience a natural, professional conversation." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Katch available on Android and iOS?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Katch is launching on both Android (Play Store) and iOS (App Store). Join the waitlist to get early access on your platform the moment it launches." }
         }
       ]
     }
@@ -193,10 +228,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="#" class="text-xl font-bold tracking-tight text-stone-900">Katch</a>
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="#how-it-works" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">How it Works</a>
-                    <a href="#features" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">Features</a>
-                    <a href="#faq" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">FAQ</a>
+                    <div class="relative group">
+                        <button class="text-stone-500 hover:text-stone-900 font-medium text-sm flex items-center gap-1">Compare <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                        <div class="absolute top-8 left-0 bg-white border border-stone-200 rounded-xl shadow-lg p-2 hidden group-hover:block min-w-52 z-50">
+                            <a href="/compare/truecaller-alternative.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Katch vs Truecaller</a>
+                            <a href="/compare/best-ai-voicemail-app-india.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Best AI Voicemail India</a>
+                            <a href="/compare/call-screening-app-india.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Call Screening Apps</a>
+                            <a href="/compare/google-voice-alternative.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Katch vs Google Voice</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-stone-500 hover:text-stone-900 font-medium text-sm flex items-center gap-1">For Professionals <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                        <div class="absolute top-8 left-0 bg-white border border-stone-200 rounded-xl shadow-lg p-2 hidden group-hover:block min-w-40 z-50">
+                            <a href="/for/doctors.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Doctors</a>
+                            <a href="/for/founders.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Founders</a>
+                            <a href="/for/lawyers.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Lawyers</a>
+                            <a href="/for/real-estate-agents.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Real Estate Agents</a>
+                        </div>
+                    </div>
+                    <a href="/tools/missed-call-roi-calculator.html" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">Tools</a>
+                    <a href="/blog/" class="text-stone-500 hover:text-stone-900 font-medium transition-colors text-sm">Blog</a>
                 </div>
                 <a href="#waitlist" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-full text-white bg-indigo-600 btn-primary shadow-sm">
                     Get Early Access &rarr;
