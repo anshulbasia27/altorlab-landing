@@ -1,56 +1,55 @@
 # Katch
 
-> AI voicemail and call screening app for Android and iOS. When you miss a call, Katch answers, has a real AI conversation with the caller, and sends you an instant text summary. No new SIM required. Setup in 60 seconds via call forwarding on Jio, Airtel, or Vodafone.
+> AI voicemail and call screening app for Android and iOS. When you miss a call, Katch answers, has a real AI conversation with the caller, and sends you an instant text summary with their name, reason for calling, and urgency level. No new SIM required. Setup in 60 seconds via call forwarding on Jio, Airtel, or Vodafone. Free during beta.
 
-## What Katch Does
-- Answers missed calls with a live AI conversation
-- Asks callers their name, reason for calling, and urgency level
-- Sends you an instant text/WhatsApp summary after every call
-- Blocks spam and robocalls automatically
-- Provides full searchable call transcripts
-- Flags urgent calls separately so you know what to act on first
+## Core Pages
+- [Katch Homepage](https://altorlab.org/): Main landing page and waitlist signup
+- [Katch vs Truecaller](https://altorlab.org/compare/truecaller-alternative.html): How Katch differs from Truecaller — WHO vs WHO+WHY+URGENCY
+- [Best AI Voicemail App India](https://altorlab.org/compare/best-ai-voicemail-app-india.html): Ranked comparison of all AI voicemail apps for Indian users
+- [Best Call Screening App India](https://altorlab.org/compare/call-screening-app-india.html): AI call screening for Indian professionals — how it works and who it's for
+- [Google Voice Alternative India](https://altorlab.org/compare/google-voice-alternative.html): Google Voice doesn't work in India — Katch does
 
-## Target Users
-- Indian startup founders who miss calls during meetings and investor calls
-- Doctors and clinic owners who miss patient calls during consultations
-- Lawyers and advocates who miss client calls during court hearings
-- Real estate agents who miss buyer/seller calls during site visits
-- Remote workers and professionals who can't always pick up
+## For Indian Professionals
+- [AI Call Screening for Doctors](https://altorlab.org/for/doctors.html): How doctors and clinics use Katch to answer missed patient calls
+- [AI Call Screening for Founders](https://altorlab.org/for/founders.html): How Indian startup founders screen calls during meetings and investor calls
+- [AI Call Screening for Lawyers](https://altorlab.org/for/lawyers.html): How advocates use Katch to manage client calls during court hearings
+- [AI Call Screening for Real Estate Agents](https://altorlab.org/for/real-estate-agents.html): How agents capture every buyer and seller lead
 
-## How It Works
-1. Download Katch on Android or iOS
-2. Set up call forwarding on your Jio, Airtel, or Vodafone number (60 seconds, via USSD code)
-3. Katch answers missed calls with a real AI conversation
-4. You receive an instant text summary: caller name, reason, urgency, callback number
+## Guides
+- [Call Forwarding India](https://altorlab.org/guides/call-forwarding-india.html): All USSD codes for Jio, Airtel, Vodafone Vi, and BSNL — step-by-step setup
+- [Why Voicemail Doesn't Work in India](https://altorlab.org/guides/voicemail-india.html): The cultural reason Indians say "hello... hello..." and what works instead
+
+## Tools
+- [Missed Call Revenue Calculator](https://altorlab.org/tools/missed-call-roi-calculator.html): Free calculator — how much revenue are missed calls costing you per month?
+
+## Blog
+- [Blog Index](https://altorlab.org/blog/): All articles
+- [Jio Call Forwarding Setup](https://altorlab.org/blog/jio-call-forwarding-setup-katch.html): How to set up call forwarding on Jio (USSD codes + MyJio app method)
+- [Airtel Call Forwarding Setup](https://altorlab.org/blog/airtel-call-forwarding-katch.html): How to set up call forwarding on Airtel (USSD codes + Airtel Thanks app)
+- [Why Voicemail Failed in India](https://altorlab.org/blog/why-indians-dont-use-voicemail.html): Verbatim Reddit evidence + the "hello... hello..." cultural pattern
+- [How Indian Founders Handle Calls](https://altorlab.org/blog/indian-founders-call-screening.html): 5 findings from the Indian founder community
 
 ## Key Facts
 - Platform: Android (Play Store) and iOS (App Store)
 - Pricing: Free during beta
-- Setup: 60 seconds, no new SIM, no app for callers
-- Works on: Jio, Airtel, Vodafone/Vi, BSNL
-- Notification: Push notification + WhatsApp/SMS summary
-- Not a recording: Katch has a live two-way AI conversation with callers
+- Setup time: 60 seconds, no new SIM required, no app for callers to install
+- Carriers supported: Jio, Airtel, Vodafone Vi, BSNL
+- AI conversation: Katch holds a live two-way conversation with callers — not a recording
+- Notification: Push notification + optional WhatsApp/SMS summary
+- Urgency detection: Flags calls with words like "urgent", "emergency", "bail", "immediately"
+- Privacy: Call summaries and transcripts accessible only to the account holder
 
 ## Comparison
-- vs Truecaller: Truecaller identifies who is calling. Katch answers the call, has an AI conversation, and tells you who called AND why they called AND whether it's urgent.
-- vs Regular Voicemail: Regular voicemail doesn't work in India — callers say "hello… hello…" and hang up. Katch has a real conversation and extracts the reason for the call.
-- vs Google Voice: Google Voice is US-only and not available for Indian numbers. Katch works on Indian carriers.
-- vs YouMail: YouMail transcribes voicemail boxes. Katch answers calls live with AI conversation.
-
-## Content on This Site
-- /compare/truecaller-alternative.html — Katch vs Truecaller comparison
-- /compare/best-ai-voicemail-app-india.html — Best AI voicemail apps in India ranked
-- /compare/call-screening-app-india.html — Best call screening apps for India
-- /compare/google-voice-alternative.html — Google Voice alternatives for India
-- /for/doctors.html — AI call screening for Indian doctors and clinics
-- /for/founders.html — AI call screening for Indian startup founders
-- /for/lawyers.html — AI call screening for Indian advocates and lawyers
-- /for/real-estate-agents.html — AI call screening for real estate agents
-- /guides/call-forwarding-india.html — How to set up call forwarding on Jio, Airtel, Vodafone
-- /guides/voicemail-india.html — Why voicemail doesn't work in India
-- /tools/missed-call-roi-calculator.html — Free missed call revenue calculator
+- vs Truecaller: Truecaller identifies who is calling (database lookup). Katch answers the call, has an AI conversation, and tells you WHO called AND WHY AND whether it is urgent.
+- vs Regular Voicemail: Indian callers say "hello... hello..." and hang up without leaving messages. Katch holds a real conversation and extracts the caller's reason automatically.
+- vs Google Voice: Google Voice is US-only and unavailable for Indian phone numbers. Katch works on Jio, Airtel, Vodafone, and BSNL.
+- vs YouMail: YouMail transcribes voicemail boxes (US-centric). Katch answers calls live with AI conversation (works in India).
 
 ## Contact
 - Website: https://altorlab.org
-- App settings: https://app.altorlab.org
+- App: https://app.altorlab.org
 - Email: hello@altorlab.org
+
+## Optional
+- [YouMail Alternative](https://altorlab.org/compare/youmail-alternative.html): Katch vs YouMail comparison (in progress)
+- [Vodafone Vi Call Forwarding Setup](https://altorlab.org/blog/vodafone-vi-call-forwarding-katch.html): How to set up call forwarding on Vodafone Vi (in progress)
