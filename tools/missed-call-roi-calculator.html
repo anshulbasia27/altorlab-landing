@@ -48,7 +48,7 @@
                     <div class="relative group">
                         <button class="text-stone-500 hover:text-stone-900 font-medium text-sm flex items-center gap-1">Compare <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
                         <div class="absolute top-8 left-0 bg-white border border-stone-200 rounded-xl shadow-lg p-2 hidden group-hover:block min-w-52 z-50">
-                            <a href="/compare/truecaller-alternative.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Katch vs Truecaller</a>
+                            <a href="/compare/best-visual-voicemail-app-2026.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Best Visual Voicemail 2026</a><a href="/compare/truecaller-alternative.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Katch vs Truecaller</a>
                             <a href="/compare/best-ai-voicemail-app-india.html" class="block px-3 py-2 text-sm text-stone-700 hover:bg-stone-50 rounded-lg">Best AI Voicemail India</a>
                         </div>
                     </div>
@@ -79,6 +79,14 @@
 
     <section class="py-10 pb-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex items-center bg-stone-100 rounded-full p-1 gap-1">
+                    <button id="btn-inr" onclick="setCurrency('INR')" class="px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-stone-900 shadow-sm">₹ India</button>
+                    <button id="btn-usd" onclick="setCurrency('USD')" class="px-4 py-2 rounded-full text-sm font-bold transition-all text-stone-500 hover:text-stone-700">$ United States</button>
+                </div>
+            </div>
+
             <div class="grid lg:grid-cols-2 gap-8 items-start">
 
                 <div class="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm">
@@ -93,10 +101,10 @@
                     <div class="mb-7">
                         <label class="block text-sm font-semibold text-stone-700 mb-2">Average value of one new client</label>
                         <div class="relative">
-                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-500 font-bold text-sm">₹</span>
+                            <span id="currency-symbol" class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-500 font-bold text-sm">₹</span>
                             <input type="number" id="client-value" value="5000" min="100" max="1000000" step="500" oninput="calculate()" class="form-input w-full border border-stone-200 rounded-xl pl-8 pr-4 py-3 text-stone-900 text-sm bg-stone-50 transition-all">
                         </div>
-                        <p class="text-xs text-stone-400 mt-1.5">Doctor: ₹3,000–8,000 &bull; Lawyer: ₹10,000–50,000 &bull; Real estate: ₹1,50,000+</p>
+                        <p id="client-value-hint" class="text-xs text-stone-400 mt-1.5">Doctor: ₹3,000–8,000 &bull; Lawyer: ₹10,000–50,000 &bull; Real estate: ₹1,50,000+</p>
                     </div>
 
                     <div class="mb-7">
@@ -113,11 +121,17 @@
 
                     <div>
                         <p class="text-xs text-stone-500 font-semibold mb-2">Try a preset:</p>
-                        <div class="flex flex-wrap gap-2">
+                        <div id="presets-inr" class="flex flex-wrap gap-2">
                             <button onclick="setPreset(10,5000,40,30)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">🏥 Doctor</button>
                             <button onclick="setPreset(15,150000,60,20)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">🏠 Real Estate</button>
                             <button onclick="setPreset(8,15000,30,30)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">⚖️ Lawyer</button>
                             <button onclick="setPreset(12,50000,50,20)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">🚀 Founder</button>
+                        </div>
+                        <div id="presets-usd" class="flex flex-wrap gap-2 hidden">
+                            <button onclick="setPreset(12,15000,60,25)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">🏠 Realtor</button>
+                            <button onclick="setPreset(8,250,50,40)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">🏥 Doctor</button>
+                            <button onclick="setPreset(6,350,35,30)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">⚖️ Lawyer</button>
+                            <button onclick="setPreset(10,200,40,30)" class="text-xs px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-full text-stone-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">💼 Consultant</button>
                         </div>
                     </div>
                 </div>
@@ -127,11 +141,11 @@
                         <p class="text-xs font-bold text-amber-800 uppercase tracking-widest mb-6">Your Missed Call Cost</p>
                         <div class="mb-5">
                             <p class="text-stone-500 text-sm mb-1">Per month</p>
-                            <div class="text-5xl font-black text-stone-900 tracking-tight">₹<span id="monthly-result">16,500</span></div>
+                            <div class="text-5xl font-black text-stone-900 tracking-tight"><span id="result-symbol">₹</span><span id="monthly-result">16,500</span></div>
                         </div>
                         <div class="border-t border-amber-200 pt-5 mb-5">
                             <p class="text-stone-500 text-sm mb-1">Per year</p>
-                            <div class="text-3xl font-bold text-stone-900">₹<span id="annual-result">1,98,000</span></div>
+                            <div class="text-3xl font-bold text-stone-900"><span id="result-symbol-annual">₹</span><span id="annual-result">1,98,000</span></div>
                         </div>
                         <div class="bg-white rounded-xl p-4 mb-5">
                             <p class="text-stone-500 text-xs mb-1">Missed leads per month</p>
@@ -227,7 +241,9 @@
     </footer>
 
     <script>
-        function fmt(n) {
+        let activeCurrency = 'INR';
+
+        function fmtINR(n) {
             if (n >= 10000000) return (n/10000000).toFixed(1) + ' Cr';
             if (n >= 100000) return (n/100000).toFixed(1) + ' L';
             if (n >= 1000) {
@@ -238,6 +254,12 @@
                 return rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + last3;
             }
             return n.toString();
+        }
+        function fmtUSD(n) {
+            return n.toLocaleString('en-US');
+        }
+        function fmt(n) {
+            return activeCurrency === 'USD' ? fmtUSD(n) : fmtINR(n);
         }
         function calculate() {
             const calls = parseInt(document.getElementById('calls-missed').value) || 5;
@@ -259,6 +281,34 @@
             document.getElementById('lead-pct-display').textContent = lp;
             document.getElementById('conv-pct').value = cp;
             document.getElementById('conv-pct-display').textContent = cp;
+            calculate();
+        }
+        function setCurrency(cur) {
+            activeCurrency = cur;
+            const sym = cur === 'USD' ? '$' : '₹';
+            document.getElementById('currency-symbol').textContent = sym;
+            document.getElementById('result-symbol').textContent = sym;
+            document.getElementById('result-symbol-annual').textContent = sym;
+            const hintEl = document.getElementById('client-value-hint');
+            if (cur === 'USD') {
+                hintEl.textContent = 'Realtor: $15,000 avg commission · Doctor: $250/visit · Lawyer: $350/hr';
+                document.getElementById('presets-inr').classList.add('hidden');
+                document.getElementById('presets-usd').classList.remove('hidden');
+                document.getElementById('client-value').value = 250;
+                document.getElementById('btn-usd').classList.add('bg-white', 'text-stone-900', 'shadow-sm');
+                document.getElementById('btn-usd').classList.remove('text-stone-500');
+                document.getElementById('btn-inr').classList.remove('bg-white', 'text-stone-900', 'shadow-sm');
+                document.getElementById('btn-inr').classList.add('text-stone-500');
+            } else {
+                hintEl.innerHTML = 'Doctor: ₹3,000–8,000 &bull; Lawyer: ₹10,000–50,000 &bull; Real estate: ₹1,50,000+';
+                document.getElementById('presets-usd').classList.add('hidden');
+                document.getElementById('presets-inr').classList.remove('hidden');
+                document.getElementById('client-value').value = 5000;
+                document.getElementById('btn-inr').classList.add('bg-white', 'text-stone-900', 'shadow-sm');
+                document.getElementById('btn-inr').classList.remove('text-stone-500');
+                document.getElementById('btn-usd').classList.remove('bg-white', 'text-stone-900', 'shadow-sm');
+                document.getElementById('btn-usd').classList.add('text-stone-500');
+            }
             calculate();
         }
         calculate();
